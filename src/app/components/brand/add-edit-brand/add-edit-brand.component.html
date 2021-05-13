@@ -1,0 +1,43 @@
+<div class="layout">
+  <app-navbar></app-navbar>
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-center col-md-12">
+        <div class="contenedor">
+          <form [formGroup]="brandForm" (ngSubmit)="saveBrand(brandForm.value)">
+            <h3 class="h3-add">{{action}} Marca</h3>
+            <div class="d-flex justify-content-end">
+              <a routerLink="/agregar-producto" id="a-agregar">Agregar producto</a>
+            </div>
+            <div class="form-group">
+              <label for="name">Nombre de la marca</label>
+              <input formControlName="name" type="text" class="form-control" id="name" />
+              <div class="text-danger">
+                <strong>{{getError("name")}}</strong>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reference">Referencia</label>
+              <input formControlName="reference" type="text" class="form-control" id="reference" />
+              <div class="text-danger">
+                <strong>{{getError("reference")}}</strong>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="brand-image">Url imagen marca</label>
+              <input formControlName="brand_image" type="text" class="form-control" id="brand-image" />
+              <div class="text-danger">
+                <strong>{{getError("brand_image")}}</strong>
+              </div>
+            </div>
+            <button class="d-inline mr-4 btn btn-primary btn-custom">{{action}}</button>
+            <button class="  btn btn-primary btn-custom btn-cancel" routerLink="/dashboard/marcas">Cancelar</button>
+            <div *ngIf="brand_success " class="alert alert-success">
+              <strong class="alert alert-success">Operación exitosa</strong>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

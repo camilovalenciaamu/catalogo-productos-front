@@ -1,0 +1,69 @@
+ .contenedor {
+   font-family: 'Open Sans', sans-serif;
+   background-color: rgb(255, 255, 255);
+   width: 500px;
+   padding: 50px;
+   margin-top: 50px;
+   margin-bottom: 70px;
+   padding-bottom: 10px;
+   border-radius: 15px;
+ }
+
+ input, select {
+   border-radius: 18px;
+ }
+
+ .h3-add {
+   font-weight: bold;
+ }
+
+ @media screen and (max-width:576px) {
+   .h3-add {
+     font-size: 25px;
+   }
+ }
+
+ select {
+   background-image: linear-gradient(45deg, transparent 50%, rgb(26, 25, 25) 30%), linear-gradient(135deg, rgb(15, 15, 15) 40%, transparent 50%) !important;
+   background-position: calc(100% - 25px) 14px, calc(100% - 20px) 14px, 100% 0;
+   background-size: 8px 5px, 5px 5px;
+   background-repeat: no-repeat;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+ }
+
+ option {
+   margin-right: 30px;
+ }
+
+ .layout {
+   background: url(../../../../assets/img/img-bg.jpg) no-repeat center center fixed;
+   height: 100vh;
+   background-size: cover;
+   width: 100%;
+ }
+
+ .btn-custom {
+   font-family: 'Open Sans', sans-serif;
+   font-weight: bold;
+   font-size: 18px;
+   background-image: linear-gradient(to right, #1D60B7, #2798db);
+   border-radius: 50px;
+   width: 180px;
+   height: 40px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+ }
+
+ .btn-custom:hover {
+   border-width: 3px;
+ }
+
+ .btn-cancel {
+   background: #77797e !important;
+ }
+
+ .btn-cancel:hover {
+   background: #66696d !important;
+   border-width: 0px !important;
+ }

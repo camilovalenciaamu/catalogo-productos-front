@@ -1,0 +1,13 @@
+<div class="card">
+  <img [src]="product_image" alt="" class="card-img-top">
+  <div class="card-body">
+    <div class="d-flex justify-content-start">
+      <a (click)="deleteProduct()"><i class="fas fa-trash custom-icon"></i></a>
+    </div>
+    <h5 class="card-title text-center">{{name}}</h5>
+    <h6 class="text-center">Talla {{size}}</h6>
+    <p class=" card-text text-center">{{brand}}</p>
+    <button class="btn btn-primary btn-block btn-custom" routerLink="/dashboard/producto/{{id}}">Ver detalles</button>
+    <button class="btn btn-primary btn-block btn-custom" routerLink="/actualizar-producto/{{id}}">Editar</button>
+  </div>
+</div>

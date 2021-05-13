@@ -1,0 +1,9 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="row">
+  <a routerLink="/agregar-producto" id="a-agregar">Agregar producto</a>
+</div>
+<div class="row">
+  <div *ngFor="let product of list_products" class="col-lg-3 custom-card">
+    <app-card-product [product]="product"></app-card-product>
+  </div>
+</div>

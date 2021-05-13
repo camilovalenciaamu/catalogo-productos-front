@@ -1,0 +1,12 @@
+<div class="card">
+  <img [src]="brand_image" alt="" class="card-img-top">
+  <div class="card-body">
+    <div class="d-flex justify-content-start">
+      <a (click)="deleteBrand()"><i class="fas fa-trash custom-icon"></i></a>
+    </div>
+    <h5 class="card-title text-center">{{name}}</h5>
+    <h6 class="text-center">Referencia {{reference}}</h6>
+    <button class="btn btn-primary btn-block btn-custom" routerLink="/dashboard/marca/{{id}}">Ver detalles</button>
+    <button class="btn btn-primary btn-block btn-custom" routerLink="/actualizar-marca/{{id}}">Editar</button>
+  </div>
+</div>

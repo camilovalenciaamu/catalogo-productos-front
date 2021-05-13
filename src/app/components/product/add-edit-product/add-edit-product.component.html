@@ -1,0 +1,81 @@
+<div class="layout">
+  <app-navbar></app-navbar>
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-center col-md-12">
+        <div class="contenedor">
+          <form [formGroup]="productForm" (ngSubmit)="saveProduct(productForm.value)">
+            <h3 class="h3-add">{{action}} Producto</h3>
+            <div class="d-flex justify-content-end">
+              <a routerLink="/agregar-marca" id="a-agregar">Agregar marca</a>
+            </div>
+            <div class="form-group">
+              <label for="brand">Selecciona una marca</label>
+              <select formControlName="brand_id" class="form-control" id="brand">
+                <option value="{{brand.id}}" *ngFor="let brand of brands">
+                  {{brand.name}}
+                </option>
+              </select>
+              <div class="text-danger">
+                <strong>{{getError("brand_id")}}</strong>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Nombre del producto</label>
+              <input formControlName="name" type="text" class="form-control" id="name" />
+              <div class="text-danger">
+                <strong>{{getError("name")}}</strong>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="size">Talla producto</label>
+              <select formControlName="size" class="form-control" id="size">
+                <option value="{{size}}" *ngFor="let size of sizes">
+                  {{size}}
+                </option>
+              </select>
+              <div class="text-danger">
+                <strong>{{getError("size")}}</strong>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="quantity_stock">Cantidad en inventario</label>
+              <input formControlName="quantity_stock" type="number" class="form-control" id="quantity_stock" />
+              <div class="text-danger">
+                <strong>{{getError("quantity_stock")}}</strong>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Fecha de embarque</label>
+              <ejs-datetimepicker [format]="format" formControlName="boarding_date" id='datetimepicker'
+                placeholder='Selecciona una fecha'>
+              </ejs-datetimepicker>
+              <div class="text-danger">
+                <strong>{{getError("boarding_date")}}</strong>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="product-image">Url imagen producto</label>
+              <input formControlName="product_image" type="text" class="form-control" id="product-image" />
+              <div class="text-danger">
+                <strong>{{getError("product_image")}}</strong>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="comments">Observaciones</label>
+              <input formControlName="comments" type="text" class="form-control" id="comments" />
+              <div class="text-danger">
+                <strong>{{getError("comments")}}</strong>
+              </div>
+            </div>
+            <button class="d-inline mr-4 btn btn-primary btn-custom">{{action}}</button>
+            <button class="  btn btn-primary btn-custom btn-cancel" routerLink="/dashboard/productos">Cancelar</button>
+            <div *ngIf="product_success " class="alert alert-success">
+              <strong class="alert alert-success">Operación exitosa</strong>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
